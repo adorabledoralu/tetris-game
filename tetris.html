@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水晶俄罗斯方块</title>
+    <link rel="stylesheet" href="tetris.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="background">
+        <div class="crystal crystal-1"></div>
+        <div class="crystal crystal-2"></div>
+        <div class="crystal crystal-3"></div>
+        <div class="crystal crystal-4"></div>
+    </div>
+    <div class="container">
+        <div class="game-info-left">
+            <h1><i class="fas fa-gem"></i> 水晶俄罗斯方块</h1>
+            <div class="score-container">
+                <p><i class="fas fa-star"></i> 分数: <span id="score">0</span></p>
+                <p><i class="fas fa-trophy"></i> 等级: <span id="level">1</span></p>
+                <p><i class="fas fa-layer-group"></i> 消除行数: <span id="lines">0</span></p>
+            </div>
+            <div class="next-piece">
+                <h2><i class="fas fa-eye"></i> 下一个方块</h2>
+                <canvas id="next-piece-canvas" width="100" height="100"></canvas>
+            </div>
+        </div>
+        <div class="game-board">
+            <canvas id="tetris-canvas" width="300" height="600"></canvas>
+        </div>
+        <div class="game-info-right">
+            <div class="controls">
+                <h2><i class="fas fa-keyboard"></i> 操作说明</h2>
+                <p><i class="fas fa-arrow-left"></i> <i class="fas fa-arrow-right"></i> : 左右移动</p>
+                <p><i class="fas fa-arrow-up"></i> : 旋转</p>
+                <p><i class="fas fa-arrow-down"></i> : 加速下落</p>
+                <p><i class="fas fa-space-shuttle"></i> : 直接下落</p>
+                <p><i class="fas fa-pause"></i> : 暂停/继续</p>
+                <p><i class="fas fa-volume-up"></i> : 音乐开关(M键)</p>
+            </div>
+            <div class="audio-controls">
+                <button id="music-toggle" class="control-button">
+                    <i class="fas fa-volume-up"></i> 音乐开
+                </button>
+                <button id="sound-toggle" class="control-button">
+                    <i class="fas fa-bell"></i> 音效开
+                </button>
+                <div class="volume-controls">
+                    <label for="music-volume">音乐音量</label>
+                    <input type="range" id="music-volume" min="0" max="100" value="50">
+                    <label for="sound-volume">音效音量</label>
+                    <input type="range" id="sound-volume" min="0" max="100" value="30">
+                </div>
+            </div>
+            <div class="game-buttons">
+                <button id="start-button"><i class="fas fa-play"></i> 开始游戏</button>
+                <button id="pause-button"><i class="fas fa-pause"></i> 暂停</button>
+            </div>
+        </div>
+    </div>
+    <script src="tetris.js"></script>
+</body>
+</html> 
